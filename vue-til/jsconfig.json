@@ -1,0 +1,18 @@
+// vscode 내부의 기능을 활용하기위한 파일
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "~/*": [
+          "./*"
+        ],
+        "@/*": [
+          "./src/*"
+        ],
+      }
+    },
+    "exclude": [
+      "node_modules",
+      "dist"
+    ]
+  }
