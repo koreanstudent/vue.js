@@ -6,7 +6,7 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  mode: 'history', // url에 #이 제거됨
+  mode: 'history', // url에 #이 제거됨, 운영 시 레퍼런스확인 (vue-router -> history) 서버 설정
 
   routes: [
     {
