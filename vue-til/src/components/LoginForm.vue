@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import { loginUser } from '@/api/index';
 import { validateEmail } from '@/utils/validation';
+
 export default {
   data() {
     return {
@@ -52,11 +52,15 @@ export default {
           username: this.username,
           password: this.password,
         };
-        const { data } = await loginUser(userData);
-        // 메인 페이지로 이동
-        console.log(data.token);
-        this.$store.commit('setToken', data.token);
-        this.$store.commit('setUsername', data.user.username);
+        await this.$store.dispatch('LOGIN', userData);
+        // const { data } = await loginUser(userData);
+        // // 메인 페이지로 이동
+        // console.log(data.token);
+        // this.$store.commit('setToken', data.token);
+        // this.$store.commit('setUsername', data.user.username);
+        // saveAuthToCookie(data.token);
+        // saveUserToCookie(data.user.username);
+
         this.$router.push('/main'); //  javascript상에서 이동 /  <router-link to=""> - html상에서 이동
       } catch (error) {
         console.log(error);
