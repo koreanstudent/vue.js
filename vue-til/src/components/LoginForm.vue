@@ -63,7 +63,6 @@ export default {
 
         this.$router.push('/main'); //  javascript상에서 이동 /  <router-link to=""> - html상에서 이동
       } catch (error) {
-        console.log(error);
         console.log(error.response);
         this.logMessage = error.response.data;
       } finally {
