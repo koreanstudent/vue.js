@@ -32,6 +32,9 @@ export default new Vuex.Store({
     setToken(state, token) {
       state.token = token;
     },
+    clearToken(state, token) {
+      state.token = '';
+    },
   },
   actions: {
     async LOGIN({ commit }, userData) {
