@@ -9,6 +9,7 @@
           v-for="postItem in postItems"
           :key="postItem._id"
           :postItem="postItem"
+          @refresh="fetchData"
         ></PostListItem>
         <!--  컴포넌트화 -->
         <!-- <li v-for="postItem in postItems" :key="postItem._id">
@@ -25,7 +26,7 @@
       </ul>
     </div>
     <router-link to="/add" class="create-button">
-      +
+      <i class="ion-md-add"></i>
     </router-link>
   </div>
 </template>

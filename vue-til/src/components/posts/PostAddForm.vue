@@ -41,13 +41,15 @@ export default {
   },
   methods: {
     async submitForm() {
+      console.log(this.title);
       try {
         const response = await createPost({
           title: this.title,
           contents: this.contents,
         });
+        this.$router.push('/main');
         console.log(response);
-      } catch {
+      } catch (error) {
         console.log(error.response.data.message);
         this.logMessage = error.response.data.message;
       }
